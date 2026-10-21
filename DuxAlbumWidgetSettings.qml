@@ -4,7 +4,7 @@ import qs.Modules.Plugins
 
 PluginSettings {
     id: root
-    pluginId: "dankAlbumWidget"
+    pluginId: "duxAlbumWidget"
 
     ToggleSetting {
         settingKey: "hideWhenIdle"

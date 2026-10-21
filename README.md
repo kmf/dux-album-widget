@@ -1,12 +1,15 @@
-# Dank Album Widget
+# Dux Album Widget
 
-A DankMaterialShell desktop widget that shows the current track's album art
-and playback controls. It talks to the same MPRIS stack DankDash media uses
+A Dux Shell desktop widget that shows the current track's album art
+and playback controls. It talks to the same MPRIS stack Dash media uses
 (`MprisController`, `TrackArtService`, `MediaAccentService`).
 
 Any MPRIS player works: Spotify, Cider, Firefox/Brave tabs, VLC, mpv, and so on.
 
-![Dank Album Widget on the desktop](screenshot.jpg)
+![Dux Album Widget on the desktop](screenshot.jpg)
+
+
+> Migrating from the old `dankAlbumWidget` plugin: the plugin id is now `duxAlbumWidget`, so remove `~/.config/DankMaterialShell/plugins/dankAlbumWidget` (or `~/.config/dms/plugins/dankAlbumWidget`) and re-apply your settings.
 
 ## Features
 
@@ -19,24 +22,26 @@ Any MPRIS player works: Spotify, Cider, Firefox/Brave tabs, VLC, mpv, and so on.
 
 ## Requirements
 
-- DankMaterialShell >= 1.2.0
+- Dux Shell (DMS) >= 2.0.0
 - An MPRIS-compatible media player
 
 ## Installation
 
-Symlink this repo into the DMS plugins directory:
+Copy the plugin into the DMS plugins directory:
 
 ```bash
-ln -s "$(pwd)" ~/.config/DankMaterialShell/plugins/dankAlbumWidget
+git clone https://github.com/kmf/dux-album-widget.git
+mkdir -p ~/.config/dms/plugins/duxAlbumWidget
+cp dux-album-widget/{plugin.json,DuxAlbumWidget.qml,DuxAlbumWidgetSettings.qml} ~/.config/dms/plugins/duxAlbumWidget/
 ```
 
 Then:
 
 1. Open **Settings → Plugins**
 2. Click **Scan for Plugins**
-3. Enable **Dank Album Widget**
+3. Enable **Dux Album Widget**
 4. Open **Settings → Widgets** and place it on the desired display
-5. Reload plugins if needed: `dms ipc plugin-scan reload dankAlbumWidget`
+5. Reload plugins if needed: `dms ipc call plugins reload duxAlbumWidget`
 
 Right-click and drag to move. Drag the corner handle to resize.
 
